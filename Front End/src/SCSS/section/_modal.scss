@@ -1,5 +1,6 @@
+/* src/SCSS/section/_modal.scss */
+
 .modal-overlay {
-  
   position: fixed;
   top: 0;
   left: 0;
@@ -36,43 +37,41 @@
   height: auto;
 }
 
+.projet-btn {
+  margin: 10px; 
+  padding: 10px 20px;
+  color: white;
+  background-color: #a567a2;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
 
-  
-  .projet-btn {
-      margin: 10px; 
-      padding: 10px 20px;
-      color: white;
-      background-color: #a567a2;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 16px;
-      transition: background-color 0.3s;
+    &:hover {
+        background-color: #b997b8;
+    }
+}
 
-      &:hover {
-          background-color: #b997b8;
-      }
-  }
-
-  .modal-details {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; 
-    margin-top: 20px;
-  }
+.modal-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; 
+  margin-top: 20px;
+}
   
-  .modal-column {
-    flex: 1; 
-    padding: 10px;
-  }
+.modal-column {
+  flex: 1; 
+  padding: 10px;
+}
   
-  .modal-column p {
-    margin-bottom: 10px;
-    white-space: pre-line;
-  }
+.modal-column p {
+  margin-bottom: 10px;
+  white-space: pre-line;
+}
   
 .modal-close {
- position: absolute;
+  position: absolute;
   color: black;
 	top: 0; 
 	right: 0; 

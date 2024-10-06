@@ -1,16 +1,18 @@
 @charset "UTF-8";
-/* src/components/style/_header.scss */
+
+/* src/SCSS/layout/_header.scss */
 
 body {
   font-family: "Montserrat",sans-serif;
 }
-// Fade in pour l'animation du nom et prenom 
+
+// Animation pour faire apparaître et disparaître le nom et prénom
 @keyframes fadeInOut {
   0%, 100% {
-    opacity: 1;
+    opacity: 1; // Pleine opacité au début et à la fin de l'animatio
   }
   50% {
-    opacity: 0;
+    opacity: 0; // Opacité à 0 au milieu de l'animation (disparaît)
   }
 }
 
@@ -19,10 +21,9 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100px;  
-  width: 80vw;
-  max-width: 1240px; 
-  margin: auto;
- 
+  width: 65vw;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .name-mode {
@@ -38,22 +39,22 @@ body {
   margin-right: 15px;
   display: flex;
   overflow: hidden;
-  white-space: nowrap;
-
+  white-space: nowrap; // Empêcher le passage à la ligne
 }
 
-
+// Style pour la barre de navigation (fixée en haut)
 .navbar {
   position: fixed;
   display: flex;
   align-items: center;
- width: 65vw;
- z-index: 10;
+  width: 65vw;
+  z-index: 10;
+  height: 100px;
+  background-color: #ffffff
 }
 
-// Menu liste
+// La liste de navigation
 .navLinks {
-  
   display: flex;
   list-style-type: none;
   padding: 0;
@@ -64,21 +65,21 @@ body {
 .navLinks li {
   margin: 0 15px; 
   font-family: 'Montserrat', sans-serif;
-  
 }
 
+// Liens de navigation
 .navLinks a {
-  
   text-decoration: none;
   color: #333;
   font-size: 18px;
-  position: relative; 
+  position: relative; // Position relative pour les animations sous les liens
   padding-bottom: 5px; 
   transition: color 0.3s ease-in-out; 
 }
 
+// Animation de la barre sous le lien au survol
 .navLinks a::after {
-  content: '';
+  content: ''; // Élément vide utilisé pour l'animation
   position: absolute;
   width: 0; 
   height: 2px; 
@@ -88,6 +89,7 @@ body {
   transition: width 0.3s ease-in-out; // Transition animé
 }
 
+// Couleur active pour les liens de navigation
 .navLinks a.active {
   color: #a567a2;
 }
@@ -95,6 +97,8 @@ body {
 .navLinks a.active::after {
   width: 100%; 
 }
+
+// Changement de couleur au survol des liens
 .navLinks a:hover {
   color: #a567a2;
 }
@@ -102,28 +106,30 @@ body {
 .navLinks a:hover::after {
   width: 100%; }
 
-
-
+// Animation pour chaque lettre du nom
 .letter {
   display: inline-block;
   opacity: 0;
-  transform: translateX(-1px); 
-  animation: fadeInOut 5s ease-in-out infinite;
+  transform: translateX(-1px); // Légère translation pour l'effet d'entrée
+  animation: fadeInOut 5s ease-in-out infinite; // Animation répétée
 }
 
+// Afficher les lettres du nom avec une animation
 .show-name .letter {
   opacity: 1;
-  animation: fadeInLetter 0.5s forwards;
+  animation: fadeInLetter 0.5s forwards;  // Animation d'entrée
 }
 
+// Espacement entre les lettres
 .name .space {
   display: inline-block;
   width: 0.3rem; 
   animation: none; 
 }
 
+// Style pour l'icône burger (menu pour mobile)
 .burger-icon {
-  display: none; // Cacher par défaut sur desktop
+  display: none; 
   cursor: pointer;
   flex-direction: column;
   justify-content: space-between;
@@ -131,26 +137,29 @@ body {
   width: 30px;
   z-index: 1001;
 
+  // Lignes du menu burge
   .burger-line {
     width: 100%;
     height: 3px;
     background-color: #333;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;  // Transition pour l'animation
   }
 
+  // Transformation de la première ligne lorsque le menu est ouvert
   &.open .burger-line:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg); // Translation et rotation en croix
   }
 
+  // Cache la deuxième ligne lorsque le menu est ouvert
   &.open .burger-line:nth-child(2) {
     opacity: 0;
   }
-
+  // Transformation de la troisième ligne lorsque le menu est ouvert
   &.open .burger-line:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg); // Translation et rotation en croix
   }
 }
 
-/* Liens du menu */
+
 
 
